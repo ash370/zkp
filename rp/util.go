@@ -317,6 +317,13 @@ func CalHadamardVec(a []*big.Int, b []*big.Int) []*big.Int {
 	return c
 }
 
+/* SOS */
+/* todo */
+//This is the point
+//问题出在既有点运算也有元素运算
+//需要模P域上元素的运算，就说明G1.Affine的坐标元素fr.Element确实是模P（包括点的阶）
+//PointAffine的坐标元素是fr.Element是模P，PointAffine的阶并不是P？导致点运算和元素运算的取模不一致
+
 func addInP(a *big.Int, b *big.Int) *big.Int {
 	var m, n fr.Element
 	c := big.NewInt(0)

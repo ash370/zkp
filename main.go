@@ -1,14 +1,27 @@
 package main
 
-import "Asyn_CBDC/offlinetx"
+import (
+	"Asyn_CBDC/backend/onlinetx"
+	"fmt"
+)
 
 func main() {
-	offlinetx.OfflineTx() //35437 1125ms
-	//offlinetx.VerifyEddsa() //7003
-	//offlinetx.Encanddec()
-	//enroll.Encrypt() //9521=8860+661
-	//enroll.Enroll() //12300 193ms
-	//enroll.Comptdelta()
-	//enroll.Enc() //6083
-	//enroll.Dec()
+	//cmpplatypus.Comptdelta()
+	//cmpplatypus.T_basetx()
+	//cmpplatypus.Pure()
+	//fmt.Println("enroll:")
+	//enroll.T_Enroll()
+	//cmpplatypus.Holdinglimit() //11584
+	fmt.Println("offline:")
+	fmt.Println("offlineWithNoRegulation:")
+	//offlinetx.T_offlineTxWithNoRegulation() //33412
+	fmt.Println("offlineWithNoLimitRegulation:")
+	//offlinetx.T_offlineTxWithNoLimitRegulation() //39495
+	fmt.Println("offlineWithHoldinglimitRegulation:")
+	//offlinetx.T_offlineTxWithHoldinglimitRegulation() //48868
+	fmt.Println("offlineWithFreqlimitRegulation:")
+	//offlinetx.T_offlineTxWithFreqlimitRegulation() //61434
+	fmt.Println("online:")
+	onlinetx.Verify()
+
 }

@@ -27,6 +27,10 @@ type Enroll struct {
 	Acc     []curve.PointAffine
 }
 
+func NewEnroll() Enroll {
+	return Enroll{}
+}
+
 func (enroll Enroll) Init(params *twistededwards.CurveParams, hash hash.Hash) Enroll {
 	enroll.G0.X.SetBigInt(params.Base[0])
 	enroll.G0.Y.SetBigInt(params.Base[1])
